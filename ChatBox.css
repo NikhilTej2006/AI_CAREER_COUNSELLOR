@@ -1,0 +1,165 @@
+/* Reset and background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Segoe UI", sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Wrapper covers entire screen */
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+.chat-header {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #00e1ff;
+  text-shadow: 0 0 6px #00e1ff99;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  scroll-behavior: smooth;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-window::-webkit-scrollbar-thumb {
+  background: #00f2ff;
+  border-radius: 6px;
+}
+
+/* Bubbles */
+.chat-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 14px;
+  max-width: 85%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+}
+.chat-bubble.ai {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #00f7ff;
+}
+
+/* Avatar */
+.avatar {
+  font-size: 1.6rem;
+  margin-top: 2px;
+}
+
+/* Bubble Content */
+.bubble-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+.bubble-text a {
+  color: #00f7ff;
+  text-decoration: underline;
+}
+.bubble-text a:hover {
+  color: white;
+}
+
+/* Typing Animation */
+.typing {
+  display: flex;
+  gap: 5px;
+  margin-top: 4px;
+}
+.typing span {
+  width: 8px;
+  height: 8px;
+  background: #00f7ff;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Input Row */
+.input-row {
+  display: flex;
+  gap: 12px;
+  padding-top: 1rem;
+}
+
+.input-row input {
+  flex: 1;
+  border-radius: 12px;
+  border: none;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+.input-row input::placeholder {
+  color: #ccc;
+}
+.input-row input:focus {
+  box-shadow: 0 0 12px #00e0ff;
+}
+
+.input-row button {
+  background: #00f0ff;
+  color: black;
+  font-weight: bold;
+  padding: 1rem 1.4rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.input-row button:hover {
+  background: #00d2ff;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
