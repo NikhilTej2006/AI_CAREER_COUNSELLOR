@@ -1,0 +1,76 @@
+/* Reset and base */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* Animate background subtly */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Wrapper holds everything */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 🌟 Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff44;
+  margin-bottom: 1rem;
+}
+
+.tagline-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px rgba(0, 210, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  margin: auto;
+  max-width: 700px;
+  color: #e6f9ff;
+}
+
+.tagline-card h2 {
+  margin-bottom: 0.5rem;
+  color: #00eaff;
+  font-size: 1.5rem;
+}
+
+.tagline-card p {
+  font-weight: 300;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* 🧠 Chatbox Section */
+.chatbox-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  padding-bottom: 4rem;
+}
